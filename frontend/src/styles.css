@@ -350,3 +350,19 @@ button {
   gap: 10px;
   margin-top: 8px;
 }
+
+.modal-map {
+  max-width: 720px;
+}
+.map-wrapper {
+  height: 380px;
+  margin-top: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.distance {
+  margin: 4px 0 0;
+  color: var(--green-dark);
+  font-weight: 600;
+}

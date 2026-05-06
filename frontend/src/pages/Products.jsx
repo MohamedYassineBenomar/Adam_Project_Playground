@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import AddProductForm from "../components/AddProductForm.jsx";
 import ProductCard from "../components/ProductCard.jsx";
+import ProductMapModal from "../components/ProductMapModal.jsx";
 import { api } from "../api.js";
 import { useAuth } from "../auth.jsx";
 import { CATEGORIES, SPAIN_CITIES } from "../constants.js";
@@ -23,6 +24,17 @@ export default function Products() {
   const [city, setCity] = useState("");
   const [category, setCategory] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
+  const [mapProduct, setMapProduct] = useState(null);
+  const [userLocation, setUserLocation] = useState(null);
+
+  useEffect(() => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      (pos) => setUserLocation([pos.coords.latitude, pos.coords.longitude]),
+      () => {},
+      { timeout: 6000 }
+    );
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -113,10 +125,18 @@ export default function Products() {
           <ProductCard
             key={product.id}
             product={product}
-            onOpenMap={() => {}}
+            onOpenMap={setMapProduct}
           />
         ))}
       </div>
+
+      {mapProduct ? (
+        <ProductMapModal
+          product={mapProduct}
+          userLocation={userLocation}
+          onClose={() => setMapProduct(null)}
+        />
+      ) : null}
     </section>
   );
 }
