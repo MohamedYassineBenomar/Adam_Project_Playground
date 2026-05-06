@@ -41,15 +41,7 @@ def login(request):
             status=status.HTTP_400_BAD_REQUEST,
         )
 
-    try:
-        candidate = User.objects.get(email=email)
-    except User.DoesNotExist:
-        return Response(
-            {"detail": "Invalid credentials."},
-            status=status.HTTP_401_UNAUTHORIZED,
-        )
-
-    user = authenticate(request, username=candidate.username, password=password)
+    user = authenticate(request, username=email, password=password)
     if user is None:
         return Response(
             {"detail": "Invalid credentials."},
