@@ -18,6 +18,12 @@ export default function Navbar() {
       <div className="nav-links">
         {user ? (
           <>
+            <Link to="/products" className="nav-link">
+              Products
+            </Link>
+            <Link to="/profile" className="nav-link">
+              Profile
+            </Link>
             <span className="hello">Hola, {user.name}</span>
             <button className="link-button" onClick={handleLogout}>
               Logout

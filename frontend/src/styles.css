@@ -56,6 +56,21 @@ button {
   font-size: 0.95rem;
   opacity: 0.9;
 }
+.nav-link {
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+.success {
+  background: #e8f5e9;
+  color: var(--green-dark);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
 .link-button {
   background: transparent;
   border: 1px solid #fff;

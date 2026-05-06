@@ -4,6 +4,7 @@ import Landing from "./pages/Landing.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Products from "./pages/Products.jsx";
+import Profile from "./pages/Profile.jsx";
 import { useAuth } from "./auth.jsx";
 
 function RequireAuth({ children }) {
@@ -25,6 +26,14 @@ export default function App() {
             element={
               <RequireAuth>
                 <Products />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <RequireAuth>
+                <Profile />
               </RequireAuth>
             }
           />
