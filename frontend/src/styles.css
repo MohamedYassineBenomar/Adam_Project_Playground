@@ -175,3 +175,127 @@ button {
   font-size: 0.9rem;
   color: var(--gray);
 }
+
+.muted {
+  color: var(--gray);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.filters input,
+.filters select {
+  flex: 1;
+  min-width: 160px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font: inherit;
+}
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+/* Product grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+.card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: var(--green-light);
+}
+.card-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+.card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--green-dark);
+}
+.card-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--gray);
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #444;
+}
+.card-store {
+  font-weight: 600;
+}
+.card-phone {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+.card-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.map-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--green);
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-button:hover {
+  background: var(--green-dark);
+}
+.card-reviews {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 8px 0 0;
+  border-top: 1px dashed var(--border);
+  font-size: 0.85rem;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stars {
+  color: #f5b301;
+}
