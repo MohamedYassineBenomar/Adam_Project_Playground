@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+import AddProductForm from "../components/AddProductForm.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import { api } from "../api.js";
+import { useAuth } from "../auth.jsx";
 import { CATEGORIES, SPAIN_CITIES } from "../constants.js";
 
 function shuffle(items) {
@@ -13,12 +15,14 @@ function shuffle(items) {
 }
 
 export default function Products() {
+  const { user } = useAuth();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const [city, setCity] = useState("");
   const [category, setCategory] = useState("");
+  const [showAddForm, setShowAddForm] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -48,8 +52,28 @@ export default function Products() {
     });
   }, [products, search, city, category]);
 
+  function handleCreated(product) {
+    setProducts((prev) => [product, ...prev]);
+    setShowAddForm(false);
+  }
+
   return (
     <section>
+      {user?.role === "seller" ? (
+        <div className="toolbar">
+          <button className="btn" onClick={() => setShowAddForm(true)}>
+            + Add Product
+          </button>
+        </div>
+      ) : null}
+
+      {showAddForm ? (
+        <AddProductForm
+          onCreated={handleCreated}
+          onCancel={() => setShowAddForm(false)}
+        />
+      ) : null}
+
       <div className="filters">
         <input
           type="search"
