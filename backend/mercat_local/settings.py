@@ -14,7 +14,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "rest_framework.authtoken",
     "corsheaders",
     "api",
 ]
@@ -56,8 +55,6 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = "api.User"
-
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Europe/Madrid"
 USE_I18N = True
@@ -65,11 +62,5 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.TokenAuthentication",
-    ],
-}
 
 CORS_ALLOW_ALL_ORIGINS = True

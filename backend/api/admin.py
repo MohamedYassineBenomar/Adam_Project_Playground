@@ -1,17 +1,18 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
 
-from .models import Product, Review, User
+from .models import Product, Review, TokenJWT, User
 
 
 @admin.register(User)
-class CustomUserAdmin(UserAdmin):
-    list_display = ("email", "username", "role", "city", "is_staff")
-    list_filter = ("role", "city", "is_staff")
-    search_fields = ("email", "username")
-    fieldsets = UserAdmin.fieldsets + (
-        ("Mercat Local", {"fields": ("phone", "city", "role")}),
-    )
+class UserAdmin(admin.ModelAdmin):
+    list_display = ("email", "name", "role", "city")
+    list_filter = ("role", "city")
+    search_fields = ("email", "name")
+
+
+@admin.register(TokenJWT)
+class TokenJWTAdmin(admin.ModelAdmin):
+    list_display = ("user", "created_at")
 
 
 @admin.register(Product)

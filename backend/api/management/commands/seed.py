@@ -1,3 +1,4 @@
+from django.contrib.auth.hashers import make_password
 from django.core.management.base import BaseCommand
 
 from api.models import Product, Review, User
@@ -5,25 +6,25 @@ from api.models import Product, Review, User
 
 SELLERS = [
     {
-        "username": "Fruites Mireia",
+        "name": "Fruites Mireia",
         "email": "mireia@example.com",
         "phone": "+34 600 111 222",
         "city": "Barcelona",
     },
     {
-        "username": "Forn Roca",
+        "name": "Forn Roca",
         "email": "roca@example.com",
         "phone": "+34 600 333 444",
         "city": "Barcelona",
     },
     {
-        "username": "Lácteos del Centro",
+        "name": "Lácteos del Centro",
         "email": "lacteos@example.com",
         "phone": "+34 600 555 666",
         "city": "Madrid",
     },
     {
-        "username": "Horta Mediterrània",
+        "name": "Horta Mediterrània",
         "email": "horta@example.com",
         "phone": "+34 600 777 888",
         "city": "Valencia",
@@ -122,31 +123,11 @@ PRODUCTS = [
 ]
 
 REVIEWS = [
-    {
-        "store_email": "mireia@example.com",
-        "estrellas": 5,
-        "comentario": "Fruita fresquíssima, sempre de temporada.",
-    },
-    {
-        "store_email": "mireia@example.com",
-        "estrellas": 4,
-        "comentario": "Molt bon tracte i productes locals.",
-    },
-    {
-        "store_email": "roca@example.com",
-        "estrellas": 5,
-        "comentario": "El millor pa del barri.",
-    },
-    {
-        "store_email": "lacteos@example.com",
-        "estrellas": 4,
-        "comentario": "Queso con mucho sabor, recomendable.",
-    },
-    {
-        "store_email": "horta@example.com",
-        "estrellas": 5,
-        "comentario": "Verduras frescas a precio justo.",
-    },
+    {"store_email": "mireia@example.com", "estrellas": 5, "comentario": "Fruita fresquíssima, sempre de temporada."},
+    {"store_email": "mireia@example.com", "estrellas": 4, "comentario": "Molt bon tracte i productes locals."},
+    {"store_email": "roca@example.com", "estrellas": 5, "comentario": "El millor pa del barri."},
+    {"store_email": "lacteos@example.com", "estrellas": 4, "comentario": "Queso con mucho sabor, recomendable."},
+    {"store_email": "horta@example.com", "estrellas": 5, "comentario": "Verduras frescas a precio justo."},
 ]
 
 
@@ -154,24 +135,23 @@ class Command(BaseCommand):
     help = "Seed the database with demo sellers, products and reviews."
 
     def handle(self, *args, **options):
-        created_users = {}
+        sellers_by_email = {}
+
         for seller in SELLERS:
             user, created = User.objects.get_or_create(
                 email=seller["email"],
                 defaults={
-                    "username": seller["username"],
+                    "name": seller["name"],
+                    "password": make_password("demo1234"),
                     "phone": seller["phone"],
                     "city": seller["city"],
                     "role": "seller",
                 },
             )
-            if created:
-                user.set_password("demo1234")
-                user.save()
-            created_users[seller["email"]] = user
+            sellers_by_email[seller["email"]] = user
 
         for product in PRODUCTS:
-            owner = created_users[product["owner_email"]]
+            owner = sellers_by_email[product["owner_email"]]
             Product.objects.get_or_create(
                 title=product["title"],
                 owner=owner,
@@ -188,7 +168,7 @@ class Command(BaseCommand):
             )
 
         for review in REVIEWS:
-            store = created_users[review["store_email"]]
+            store = sellers_by_email[review["store_email"]]
             Review.objects.get_or_create(
                 store=store,
                 comentario=review["comentario"],
