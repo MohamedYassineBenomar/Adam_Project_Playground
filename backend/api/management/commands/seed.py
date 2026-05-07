@@ -101,7 +101,7 @@ PRODUCTS = [
     {
         "title": "Tomates de la huerta",
         "description": "Tomates valencianos recogidos esta mañana.",
-        "image": "https://images.unsplash.com/photo-1546470427-e5ac89cd0b31?w=600",
+        "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600",
         "price": "2.10",
         "category": "Vegetables",
         "owner_email": "horta@example.com",
