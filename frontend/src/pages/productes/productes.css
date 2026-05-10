@@ -1,0 +1,66 @@
+.productes {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.productes-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.productes-add-btn {
+  background: #2d6a4f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.productes-add-btn:hover {
+  background: #1b4332;
+}
+
+.productes-filtres {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.productes-filtres input,
+.productes-filtres select {
+  flex: 1;
+  min-width: 160px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.productes-filtres input:focus,
+.productes-filtres select:focus {
+  outline: none;
+  border-color: #2d6a4f;
+}
+
+.productes-error {
+  background: #fdecea;
+  color: #b71c1c;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.productes-buit {
+  color: #888;
+}
+
+.productes-graella {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}

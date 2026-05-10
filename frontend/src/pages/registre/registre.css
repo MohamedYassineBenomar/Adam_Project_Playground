@@ -1,0 +1,80 @@
+.registre {
+  max-width: 420px;
+  margin: 32px auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.registre h2 {
+  margin: 0 0 20px;
+  color: #1b4332;
+}
+
+.registre-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.registre-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.registre-form input,
+.registre-form select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.registre-form input:focus,
+.registre-form select:focus {
+  outline: none;
+  border-color: #2d6a4f;
+}
+
+.registre-error {
+  background: #fdecea;
+  color: #b71c1c;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.registre-btn {
+  background: #2d6a4f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.registre-btn:hover {
+  background: #1b4332;
+}
+
+.registre-canvi {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.registre-enllac {
+  background: transparent;
+  border: none;
+  color: #1b4332;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}

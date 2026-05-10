@@ -1,0 +1,174 @@
+/* Estils de la landing: hero amb degradat verd + 4 seccions plegables a mòbil */
+
+.landing section {
+  padding: 50px 24px;
+}
+
+.landing h2 {
+  text-align: center;
+  color: #2d6a4f;
+  font-size: 1.8rem;
+  margin: 0 0 16px;
+}
+
+.landing-lead {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 36px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.landing-fila-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.landing-hero {
+  background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+  color: #fff;
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.landing-hero h1 {
+  font-size: 2.8rem;
+  margin: 0 0 16px;
+}
+
+.landing-tagline {
+  max-width: 600px;
+  margin: 0 auto 32px;
+  opacity: 0.92;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.landing-botons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-btn-blanc,
+.landing-btn-outline {
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.landing-btn-blanc {
+  background: #fff;
+  color: #2d6a4f;
+}
+
+.landing-btn-blanc:hover {
+  background: #e8f5e9;
+}
+
+.landing-btn-outline {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.landing-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Sostenibilitat */
+.landing-sostenibilitat {
+  background: #e8f5e9;
+}
+
+.landing-card {
+  flex: 1 1 280px;
+  max-width: 340px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.landing-card h3 {
+  margin: 0 0 10px;
+  color: #2d6a4f;
+  font-size: 1.15rem;
+}
+
+.landing-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Donacio */
+.landing-donacio {
+  background: #fff;
+  text-align: center;
+}
+
+.landing-btn-donar {
+  display: inline-block;
+  background: #d4a017;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.landing-btn-donar:hover {
+  background: #b8860b;
+  color: #fff;
+}
+
+/* ODS */
+.landing-ods {
+  background: #f9fdf9;
+}
+
+.landing-ods-card {
+  flex: 1 1 320px;
+  max-width: 480px;
+  background: #fff;
+  border-left: 4px solid #2d6a4f;
+  border-radius: 6px;
+  padding: 22px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.landing-ods-card h3 {
+  margin: 0 0 10px;
+  color: #2d6a4f;
+  font-size: 1.15rem;
+}
+
+.landing-ods-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Destacats */
+.landing-destacats {
+  background: #fff;
+}
+
+.landing-buit {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}

@@ -1,0 +1,113 @@
+.producte-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.producte-form-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 28px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.producte-form-modal h2 {
+  margin: 0 0 18px;
+  color: #1b4332;
+}
+
+.producte-form-tancar {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.producte-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.producte-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.producte-form input,
+.producte-form select,
+.producte-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font: inherit;
+  color: #222;
+}
+
+.producte-form input:focus,
+.producte-form select:focus,
+.producte-form textarea:focus {
+  outline: none;
+  border-color: #2d6a4f;
+}
+
+.producte-form-fila {
+  display: flex;
+  gap: 12px;
+}
+
+.producte-form-fila label {
+  flex: 1;
+}
+
+.producte-form-error {
+  background: #fdecea;
+  color: #b71c1c;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.producte-form-accions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.producte-form-cancel {
+  background: #fff;
+  color: #1b4332;
+  border: 1px solid #2d6a4f;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.producte-form-enviar {
+  background: #2d6a4f;
+  color: #fff;
+  border: 1px solid #2d6a4f;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.producte-form-enviar:hover {
+  background: #1b4332;
+}

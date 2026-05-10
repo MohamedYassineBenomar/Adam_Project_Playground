@@ -1,0 +1,104 @@
+.producte-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.producte-card-imatge {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: #e8f5e9;
+}
+
+.producte-card-imatge-buit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.producte-card-cos {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.producte-card-nom {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1b4332;
+}
+
+.producte-card-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #555;
+}
+
+.producte-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.producte-card-botiga {
+  font-weight: 600;
+}
+
+.producte-card-telefon {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.producte-card-preu-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.producte-card-preu {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b4332;
+}
+
+.producte-card-mapa {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #2d6a4f;
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.producte-card-mapa:hover {
+  background: #1b4332;
+}
+
+.producte-card-ressenyes {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 8px 0 0;
+  border-top: 1px dashed #ddd;
+  font-size: 0.85rem;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.producte-card-estrelles {
+  color: #f5b301;
+}

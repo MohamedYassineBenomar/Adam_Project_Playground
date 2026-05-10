@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #2d6a4f;
+  color: #fff;
+}
+
+.header-marca {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0;
+}
+
+.header-enllacos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-link {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.header-hola {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.header-logout {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.header-logout:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
