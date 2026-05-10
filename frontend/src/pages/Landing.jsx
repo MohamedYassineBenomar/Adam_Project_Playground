@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { api } from "../api.js";
 import { useAuth } from "../auth.jsx";
 
@@ -45,8 +45,6 @@ export default function Landing() {
     };
   }, []);
 
-  if (user) return <Navigate to="/products" replace />;
-
   return (
     <div className="landing">
       <section className="hero">
@@ -57,12 +55,25 @@ export default function Landing() {
           sustainable consumption.
         </p>
         <div className="hero-buttons">
-          <Link to="/login" className="btn-white">
-            Login
-          </Link>
-          <Link to="/register" className="btn-outline-white">
-            Sign up
-          </Link>
+          {user ? (
+            <>
+              <Link to="/products" className="btn-white">
+                Browse products
+              </Link>
+              <Link to="/profile" className="btn-outline-white">
+                My profile
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="btn-white">
+                Login
+              </Link>
+              <Link to="/register" className="btn-outline-white">
+                Sign up
+              </Link>
+            </>
+          )}
         </div>
       </section>
 
