@@ -30,10 +30,8 @@ UNIT_CHOICES = [
     ("kg", "kg"),
     ("g", "g"),
     ("L", "L"),
-    ("ud", "ud"),          # unidad / pieza
-    ("docena", "docena"),  # 12 unidades (huevos, etc.)
-    ("manojo", "manojo"),  # bunch (hierbas, espárragos)
-    ("bandeja", "bandeja"),
+    ("ud", "ud"),          # unidad / piece
+    ("docena", "docena"),  # dozen (eggs, etc.)
 ]
 
 
