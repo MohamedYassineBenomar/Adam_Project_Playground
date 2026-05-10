@@ -26,6 +26,16 @@ CATEGORY_CHOICES = [
     ("Bakery", "Bakery"),
 ]
 
+UNIT_CHOICES = [
+    ("kg", "kg"),
+    ("g", "g"),
+    ("L", "L"),
+    ("ud", "ud"),          # unidad / pieza
+    ("docena", "docena"),  # 12 unidades (huevos, etc.)
+    ("manojo", "manojo"),  # bunch (hierbas, espárragos)
+    ("bandeja", "bandeja"),
+]
+
 
 class User(models.Model):
     name = models.CharField(max_length=150)
@@ -53,6 +63,7 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     image = models.URLField(blank=True)
     price = models.DecimalField(max_digits=8, decimal_places=2)
+    unit = models.CharField(max_length=10, choices=UNIT_CHOICES, default="kg")
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="products")
     city = models.CharField(max_length=50, choices=SPAIN_CITIES)

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { api } from "../api.js";
-import { CATEGORIES } from "../constants.js";
+import { CATEGORIES, UNITS } from "../constants.js";
 
 const initialForm = {
   title: "",
   description: "",
   image: "",
   price: "",
+  unit: UNITS[0],
   category: CATEGORIES[0],
   address: "",
 };
@@ -74,17 +75,32 @@ export default function AddProductForm({ onCreated, onCancel }) {
               placeholder="https://…"
             />
           </label>
-          <label>
-            Price (€)
-            <input
-              type="number"
-              step="0.01"
-              min="0"
-              value={form.price}
-              onChange={(event) => update("price", event.target.value)}
-              required
-            />
-          </label>
+          <div className="form-row">
+            <label>
+              Price (€)
+              <input
+                type="number"
+                step="0.01"
+                min="0"
+                value={form.price}
+                onChange={(event) => update("price", event.target.value)}
+                required
+              />
+            </label>
+            <label>
+              Unit
+              <select
+                value={form.unit}
+                onChange={(event) => update("unit", event.target.value)}
+              >
+                {UNITS.map((value) => (
+                  <option key={value} value={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
           <label>
             Category
             <select

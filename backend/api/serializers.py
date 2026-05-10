@@ -36,6 +36,7 @@ class ProductSerializer(serializers.ModelSerializer):
             "description",
             "image",
             "price",
+            "unit",
             "category",
             "address",
             "latitude",

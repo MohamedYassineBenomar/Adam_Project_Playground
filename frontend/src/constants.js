@@ -12,3 +12,5 @@ export const SPAIN_CITIES = [
 ];
 
 export const CATEGORIES = ["Fruits", "Vegetables", "Dairy", "Bakery"];
+
+export const UNITS = ["kg", "g", "L", "ud", "docena", "manojo", "bandeja"];

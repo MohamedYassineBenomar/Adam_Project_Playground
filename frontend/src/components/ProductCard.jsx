@@ -35,7 +35,9 @@ export default function ProductCard({ product, onOpenMap }) {
           <div className="card-phone">📞 {product.phone}</div>
         ) : null}
         <div className="card-price-row">
-          <span className="card-price">{product.price} €</span>
+          <span className="card-price">
+            {product.price} €{product.unit ? `/${product.unit}` : ""}
+          </span>
           <button
             className="map-button"
             onClick={() => onOpenMap(product)}
