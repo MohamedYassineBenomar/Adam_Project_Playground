@@ -1,45 +1,52 @@
 # Mercat Local
 
-A simple web application that connects users with local food sellers in Spain. The goal is to promote local consumption and let users discover products from nearby stores.
+Aplicació web senzilla que connecta gent amb venedors d'aliments locals
+d'arreu d'Espanya. L'objectiu és promoure el consum de proximitat i
+permetre descobrir productes de botigues properes.
 
 ## Stack
 
-- **Frontend:** React (Vite), React Router, react-leaflet
-- **Backend:** Django + Django REST Framework
-- **Database:** SQLite (default)
-- **Maps:** Leaflet + OpenStreetMap (no API key)
-- **Geocoding:** Nominatim (OpenStreetMap, no API key)
+- **Frontend:** React + Vite (sense router; estat de pàgina amb `useState`)
+- **Backend:** Django 5 + Django REST Framework (només `@api_view`)
+- **Base de dades:** PostgreSQL via `docker-compose.yml`
+- **Auth:** JWT amb PyJWT (custom `autenticar()` + `generar_token()`)
+- **Geocodificació:** Nominatim (OpenStreetMap, sense API key)
 
-## User roles
+## Rols d'usuari
 
-- **Client** — browse, search and filter products, view stores on the map.
-- **Seller** — add and manage products listed in their city.
+- **Comprador** — navegar, cercar i filtrar productes; veure botigues al mapa.
+- **Vendedor** — afegir i gestionar els seus productes.
 
-## Project structure
+## Estructura del projecte
 
 ```
 mercat-local/
-├── backend/        Django REST API
-└── frontend/       React (Vite) SPA
+├── backend/        API Django REST + docker-compose.yml (PostgreSQL)
+└── frontend/       SPA React (Vite)
 ```
 
-See [backend/README.md](backend/README.md) and [frontend/README.md](frontend/README.md) for run instructions.
+Vegeu [backend/README.md](backend/README.md) i [frontend/README.md](frontend/README.md).
 
 ## Quick start
 
 ```bash
-# Backend
+# 1) Arrencar PostgreSQL
 cd backend
+docker compose up -d
+
+# 2) Backend
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+cd src
 python manage.py migrate
-python manage.py loaddata api/fixtures/seed.json
+python manage.py seed
 python manage.py runserver
 
-# Frontend (in another terminal)
+# 3) Frontend (segon terminal)
 cd frontend
 npm install
 npm run dev
 ```
 
-Backend runs on `http://localhost:8000`, frontend on `http://localhost:5173`.
+Backend a `http://localhost:8000`, frontend a `http://localhost:5173`,
+pgAdmin a `http://localhost:5050`.
