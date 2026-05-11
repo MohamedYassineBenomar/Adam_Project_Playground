@@ -1,4 +1,4 @@
-/* Estils de la landing: hero amb degradat verd + 4 seccions plegables a mòbil */
+/* Estils de la landing: hero amb degradat verd + 4 seccions plegables a mobil */
 
 .landing section {
   padding: 50px 24px;
@@ -6,7 +6,7 @@
 
 .landing h2 {
   text-align: center;
-  color: #2d6a4f;
+  color: var(--color1);
   font-size: 1.8rem;
   margin: 0 0 16px;
 }
@@ -30,7 +30,7 @@
 
 /* Hero */
 .landing-hero {
-  background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+  background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 100%);
   color: #fff;
   text-align: center;
   padding: 60px 24px;
@@ -68,11 +68,12 @@
 
 .landing-btn-blanc {
   background: #fff;
-  color: #2d6a4f;
+  color: var(--color1);
 }
 
 .landing-btn-blanc:hover {
-  background: #e8f5e9;
+  background: var(--color3);
+  color: var(--color1);
 }
 
 .landing-btn-outline {
@@ -87,7 +88,7 @@
 
 /* Sostenibilitat */
 .landing-sostenibilitat {
-  background: #e8f5e9;
+  background: var(--color4);
 }
 
 .landing-card {
@@ -101,7 +102,7 @@
 
 .landing-card h3 {
   margin: 0 0 10px;
-  color: #2d6a4f;
+  color: var(--color1);
   font-size: 1.15rem;
 }
 
@@ -112,7 +113,7 @@
   line-height: 1.5;
 }
 
-/* Donacio */
+/* Donacio — utilitza el verd mig perque hi hagi contrast amb la resta */
 .landing-donacio {
   background: #fff;
   text-align: center;
@@ -120,7 +121,7 @@
 
 .landing-btn-donar {
   display: inline-block;
-  background: #d4a017;
+  background: var(--color2);
   color: #fff;
   padding: 14px 36px;
   border-radius: 4px;
@@ -130,20 +131,20 @@
 }
 
 .landing-btn-donar:hover {
-  background: #b8860b;
+  background: var(--color1);
   color: #fff;
 }
 
 /* ODS */
 .landing-ods {
-  background: #f9fdf9;
+  background: var(--color4);
 }
 
 .landing-ods-card {
   flex: 1 1 320px;
   max-width: 480px;
   background: #fff;
-  border-left: 4px solid #2d6a4f;
+  border-left: 4px solid var(--color2);
   border-radius: 6px;
   padding: 22px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -151,7 +152,7 @@
 
 .landing-ods-card h3 {
   margin: 0 0 10px;
-  color: #2d6a4f;
+  color: var(--color1);
   font-size: 1.15rem;
 }
 

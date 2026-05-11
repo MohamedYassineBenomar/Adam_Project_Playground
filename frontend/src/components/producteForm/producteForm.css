@@ -22,7 +22,7 @@
 
 .producte-form-modal h2 {
   margin: 0 0 18px;
-  color: #1b4332;
+  color: var(--color1);
 }
 
 .producte-form-tancar {
@@ -53,7 +53,7 @@
 .producte-form select,
 .producte-form textarea {
   padding: 8px 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color4);
   border-radius: 4px;
   font: inherit;
   color: #222;
@@ -63,7 +63,7 @@
 .producte-form select:focus,
 .producte-form textarea:focus {
   outline: none;
-  border-color: #2d6a4f;
+  border-color: var(--color2);
 }
 
 .producte-form-fila {
@@ -92,22 +92,23 @@
 
 .producte-form-cancel {
   background: #fff;
-  color: #1b4332;
-  border: 1px solid #2d6a4f;
+  color: var(--color1);
+  border: 1px solid var(--color1);
   padding: 10px 20px;
   border-radius: 4px;
   font-weight: 600;
 }
 
 .producte-form-enviar {
-  background: #2d6a4f;
+  background: var(--color1);
   color: #fff;
-  border: 1px solid #2d6a4f;
+  border: 1px solid var(--color1);
   padding: 10px 20px;
   border-radius: 4px;
   font-weight: 600;
 }
 
 .producte-form-enviar:hover {
-  background: #1b4332;
+  background: var(--color2);
+  border-color: var(--color2);
 }

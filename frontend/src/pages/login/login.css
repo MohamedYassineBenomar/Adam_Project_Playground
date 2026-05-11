@@ -2,14 +2,14 @@
   max-width: 420px;
   margin: 32px auto;
   background: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color4);
   border-radius: 8px;
   padding: 28px;
 }
 
 .login h2 {
   margin: 0 0 20px;
-  color: #1b4332;
+  color: var(--color1);
 }
 
 .login-form {
@@ -28,14 +28,14 @@
 
 .login-form input {
   padding: 8px 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color4);
   border-radius: 4px;
   font: inherit;
 }
 
 .login-form input:focus {
   outline: none;
-  border-color: #2d6a4f;
+  border-color: var(--color2);
 }
 
 .login-error {
@@ -47,7 +47,7 @@
 }
 
 .login-btn {
-  background: #2d6a4f;
+  background: var(--color1);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -57,7 +57,7 @@
 }
 
 .login-btn:hover {
-  background: #1b4332;
+  background: var(--color2);
 }
 
 .login-canvi {
@@ -70,7 +70,7 @@
 .login-enllac {
   background: transparent;
   border: none;
-  color: #1b4332;
+  color: var(--color1);
   text-decoration: underline;
   cursor: pointer;
   font: inherit;
